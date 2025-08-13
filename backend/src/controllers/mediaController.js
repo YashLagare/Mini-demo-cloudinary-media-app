@@ -30,7 +30,7 @@ export const uploadMedia = async (req, res) => {
 export const getAllMedia = async (req, res) => {
   try {
     const media = await Media.find().sort({ createdAt: -1 });
-    res.json(media);
+    res.json({media});
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
